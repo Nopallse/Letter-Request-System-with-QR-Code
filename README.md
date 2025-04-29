@@ -60,3 +60,56 @@ The application is live and can be accessed at:
 
 ### 8. **Surat**
 ![Surat Screenshot](screenshots/surat.jpg)
+
+
+
+## Configurasi Project
+
+1. **Clone repo**
+
+   ```bash
+   git clone https://github.com/Nopallse/Letter-Request-System-with-QR-Code
+   ```
+
+2. **Cd ke folder project**
+
+   ```bash
+   cd Letter-Request-System-with-QR-Code
+   ```
+
+3. **Install semua depedensi yang diperlukan**
+
+   ```bash
+   npm install
+   ```
+
+4. **Hidupkan MySQL XAMPP dan buat database & setting koneksi db pada config/config.json**
+
+   ```bash
+   "development": {
+    "username": "root",
+    "password": null,
+    "database": "aktif_kuliah",
+    "host": "localhost",
+    "dialect": "mysql"
+   }
+   ```
+
+5. **Lakukan migrasi tabel dari express ke database**
+
+   ```bash
+   npx sequelize-cli db:migrate
+   ```
+
+6. **Jalankan seeder untuk mengirim data ke database**
+
+   ```bash
+   npx sequelize-cli db:seed:all
+   ```
+
+7. **Jalankan Express dan tailwind di 2 terminal berbeda dengan perintah**
+
+   ```bash
+   npm run dev # untuk menjalankan express
+   npm run build:css # untuk menjalankan tailwind
+   ```
