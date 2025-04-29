@@ -4,8 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="/output.css" rel="stylesheet">
-  <script src="./node_modules/preline/dist/preline.js"></script>
+  <link rel="stylesheet" href="/css/output.css">
+
+
   <script src="/sweet/sweetalert2.all.min.js"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 
@@ -62,32 +63,21 @@
           <nav class="flex justify-between px-4 py-2 text-white">
             <div>
               <div>
-                <div class="hs-dropdown " data-hs-dropdown-placement="bottom-right">
-                  <button id="hs-dropdown-with-header" class="rounded-full" type="button"
-                    style="width: 50px; height: 50px;">
-                    <img class="rounded-full" src="/data/user_<%=mahasiswa.id  %>/profile.jpg" alt="Image Description"
-                      style="width: 100%;height: 100%;object-fit: cover;">
+                <div class="hs-dropdown relative inline-flex" data-hs-dropdown-placement="bottom-right">
+                  <button id="hs-dropdown-with-header" type="button" class="hs-dropdown-toggle rounded-full" style="width: 50px; height: 50px;">
+                    <img class="rounded-full" src="/data/user_<%=mahasiswa.id  %>/profile.jpg" alt="Image Description" style="width: 100%;height: 100%;object-fit: cover;">
                   </button>
-                  <div
-                    class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden min-w-[200px] max-w-[400px] z-10 bg-white shadow-md rounded-lg p-2"
-                    style="background-color: white;" aria-labelledby="hs-dropdown-with-header">
+                  <div class="hs-dropdown-menu transition-[opacity,margin] duration-300 hs-dropdown-open:opacity-100 opacity-0 hidden min-w-[200px] max-w-[400px] z-10 bg-white shadow-md rounded-lg p-2" aria-labelledby="hs-dropdown-with-header">
                     <div class="mt-2 py-2 first:pt-0 last:pb-0">
-                      <a class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-green-500 :text-neutral-400 :hover:bg-neutral-700 :hover:text-neutral-300"
-                        href="/notification">
-                        <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round">
+                      <a class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-green-500" href="/notification">
+                        <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                           <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" />
                           <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
                         </svg>
-                        notification
+                        Notification
                       </a>
-                      <a href="/notification"
-                        class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-green-500 :text-neutral-400 :hover:bg-neutral-700 :hover:text-neutral-300"
-                        href="/notification">
-                        <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round">
+                      <a class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-green-500" href="/profile">
+                        <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                           <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
                           <circle cx="9" cy="7" r="4" />
                           <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
@@ -95,19 +85,14 @@
                         </svg>
                         Profile
                       </a>
-                      <a class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-green-500 :text-neutral-400 :hover:bg-neutral-700 :hover:text-neutral-300"
-                        href="/logout"
-                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                        <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round">
+                      <a class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-green-500" href="/logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                           <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242" />
                           <path d="M12 12v9" />
                           <path d="m8 17 4 4 4-4" />
                         </svg>
                         Log-out
                       </a>
-
                       <form id="logout-form" action="/logout" method="DELETE" style="display: none;">
                         <input type="hidden" name="_method" value="DELETE">
                       </form>

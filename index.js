@@ -45,7 +45,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'assets')));
-app.use('/preline', express.static(path.join(__dirname, 'node_modules/preline/dist')));
+app.use(express.static(path.join(__dirname, 'src')));
+app.use('/preline', express.static(path.join(__dirname, '/node_modules/preline/dist')));
 app.use('/sweet', express.static(path.join(__dirname, 'node_modules/sweetalert2/dist')));
 
 app.set('view engine', 'ejs');
